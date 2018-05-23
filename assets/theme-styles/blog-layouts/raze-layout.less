@@ -1,0 +1,99 @@
+.raze {
+  margin-bottom: 30px;
+  border-bottom: 2px solid @s-accent;
+  padding: 15px 0;
+  .featured-thumb {
+    padding: 8px;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      img {
+        width: 100%;
+      }
+    }
+    .postedon {
+      position: absolute;
+      background: fade(black,50%);
+      a { color: darken(@background,0%); }
+      position: absolute;
+      padding: 3px;
+      font-size: 12px;
+      left: 50%;
+      bottom: 5px;
+      font-weight: lighter;
+      opacity: 0;
+    }
+    &:hover {
+      img {
+        -webkit-filter: brightness(0.8);
+        filter: brightness(0.8);
+        .transform(none);
+      }
+
+    }
+  }
+  .out-thumb {
+    position: relative;
+    h1.entry-title {
+      margin-top: 0px;
+      a {
+        color: @accent;
+        font-weight: 600;
+        font-size: 25px;
+      }
+    }
+    .entry-excerpt {
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: 0.6px;
+      display: inline-block;
+    }
+    .read-more {
+      display: inline-block;
+      position: relative;
+      font-weight: 600;
+      margin-top: 15px;
+      float: right;
+      margin-left: 5px;
+      @media screen and (max-width: 360px) {
+        float: none;
+      }
+      a {
+        padding: 5px 20px;
+        color: @onaccent;
+        text-decoration: none;
+        transition: 0.4s all ease;
+        background: @s-accent;
+        &:hover {
+          text-decoration: none;
+          color: @onaccent;
+          background: @accent;
+          transition: 0.4s all ease;
+        }
+      }
+    }
+    .author {
+      margin: 8px 0;
+      display: inline-block;
+      img {
+        border-radius: 50%;
+        max-width: 35px;
+        max-height: 35px;
+      }
+      span.author-name {
+        background: @accent;
+        color: @onaccent;
+        border-radius: 5px;
+        padding: 2px 5px;
+      }
+    }
+  }
+  &:hover {
+    .out-thumb {
+      &:after {
+        background: @accent;
+        .transform(scale(1.2));
+      }
+    }
+  }
+
+}
