@@ -186,37 +186,28 @@ class Raze_Switch_Control extends WP_Customize_Control{
 
         public function render_content(){
             ?>
-            <label>
-                <span class="customize-control-title">
-                <?php echo esc_html( $this->label ); ?>
-                </span>
+            
+            <span class="customize-control-title">
+            <?php echo esc_html( $this->label ); ?>
+            </span>
 
-                <?php if($this->description){ ?>
-                    <span class="description customize-control-description">
-	            	<?php echo wp_kses_post($this->description); ?>
-	            </span>
-                <?php } ?>
+            <?php if($this->description){ ?>
+                <span class="description customize-control-description">
+            	<?php echo wp_kses_post($this->description); ?>
+            </span>
+            <?php } ?>
 
-                <div class="raze-selected-skin">
-                    <div style="height: 45px; width: 100px; background: <?php echo $this->value(); ?>;"></div>
-                    <span><i class="fa fa-angle-down"></i></span>
-                </div>
+            <div class="raze-selected-skin">
+                <div style="height: 45px; width: 100px; background: <?php echo $this->value(); ?>;"></div>
+                <span><i class="fa fa-angle-down"></i></span>
+            </div>
 
-
-                <ul class="raze-skin-list clearfix">
-                    <?php
-                    $raze_skin_array = raze_skin_array();
-                    foreach ($raze_skin_array->choices as $key=>$value) { ?>
-                                <button class="<?php echo $value; ?>" style="display: inline-block; margin: 0; width: 45px; height: 45px; background: <?php echo $key; ?>" <?php $this->link(); ?>  value="<?php $this->value(); ?> "></button>
-                                <span><?php echo esc_attr( $value); ?></span>
-
-                   <?php }
-                    ?>
-                </ul>
-
-                <input type="hidden" value="<?php $this->value(); ?>" <?php $this->link(); ?> />
-            </label>
-            <?php
+            <?php $name = '_customize-skin-' . $this->id;
+	            foreach ($this->choices as $key=>$value) { ?>
+                    <label>
+                        <input type="radio" style="display: inline-block; margin: 0; width: 45px; height: 45px; background: <?php echo $key; ?>"  value="<?php echo esc_attr($value); ?>" <?php $this->link(); ?> name="<?php echo esc_attr( $name ); ?>" <?php checked( $this->value(), $value ); ?>/>
+                    </label>
+           <?php }
         }
     }
 

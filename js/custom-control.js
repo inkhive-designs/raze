@@ -1,3 +1,4 @@
+/*
 (function( jQuery ) {
     wp.customize.bind( 'ready', function() {
         var customize = this;
@@ -5,3 +6,4 @@
         alert(Control1);
     } );
 })( jQuery );
+*/

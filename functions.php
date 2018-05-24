@@ -165,7 +165,7 @@ function raze_scripts() {
 	
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/assets/css/swiper.min.css' );
 
-    wp_enqueue_style( 'raze-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('raze_skin', 'default').'.css', array(), null );
+    wp_enqueue_style( 'raze-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('raze_skins', 'default').'.css', array(), null );
 
     //wp_enqueue_style( 'raze-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('raze_skin', 'default').'.css', array(), filemtime( get_template_directory() . '/assets/theme-styles/css/'.get_theme_mod('raze_skin', 'default').'.css' ) );
 
@@ -209,10 +209,11 @@ function raze_custom_wp_customizer_script() {
 add_action( 'admin_enqueue_scripts', 'raze_custom_wp_customizer_script' );
 
 function raze_custom_control_js() {
-    wp_enqueue_script('raze-custom-control-js', get_template_directory_uri() . '/js/custom-control.js');
+	
+    wp_enqueue_script('raze-customize-control-js', get_template_directory_uri() . '/js/custom-control.js');
 }
-
 add_action('customize_controls_enqueue_scripts', 'raze_custom_control_js');
+
 /**
  * Include the Custom Functions of the Theme.
  */

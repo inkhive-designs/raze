@@ -93,8 +93,9 @@ function raze_customize_register_skins( $wp_customize ) {
     $wp_customize->add_setting(
         'raze_skins',
         array(
-            'default'			=> '#555',
-            'sanitize_callback' => 'raze_sanitize_text'
+	        'default'	=> 'grayscale',
+            'sanitize_callback' => 'raze_sanitize_text',
+            'transport'	=> 'refresh'
         )
     );
 
@@ -124,7 +125,7 @@ function raze_customize_register_skins( $wp_customize ) {
                 'section'		=> 'raze_skin_options',
                 'label'			=> __( 'Select Skins', 'raze' ),
                 'type'			=> 'skins',
-                'choices'       => $raze_skin_array,
+                'choices'		=> $raze_skin_array,
             )
         )
     );

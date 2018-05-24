@@ -4,7 +4,9 @@
 */
 
 //Define all Variables.
-$count = esc_html( rt_slider::fetch('count') );
+
+if (class_exists('rt_slider') ) :
+	$count = esc_html( rt_slider::fetch('count') );
 ?>
 <div id="slider-bg" data-stellar-background-ratio="0.5">
 	<div class="container-fluid slider-container-wrapper">
@@ -52,4 +54,5 @@ $count = esc_html( rt_slider::fetch('count') );
 	        </div>
 	</div> 
 </div>
+<?php endif; ?>
  
