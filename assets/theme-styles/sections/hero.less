@@ -1,5 +1,4 @@
 .hero-content {
-  overflow:auto;
   padding:40px;
   background-attachment:fixed;
   margin-top: 0;
@@ -9,31 +8,49 @@
   }
   .h-content{
     h1.title{
-      color:@onaccent;
       margin:0;
-    }
-    .more-button{
-      color:@onaccent;
-      padding:13px 20px;
-      font-size:16px;
-      background:@accent;
-      top: 10px;
-      border:2px solid @accent;
-      position:relative;
-      z-index:999;
-      display: inline-block;
-      &:hover {
-        padding:13px 20px;
-        font-size:16px;
-        color:@accent;
-        border:2px solid @accent;
-        background:@onaccent;
-      }
     }
     .excerpt {
       margin: 20px 0;
       font-size: 17.5px;
-      color:@onaccent;
+    }
+    .button {
+      display:inline-block;
+      .more-button{
+        color:@onaccent;
+        padding:13px 20px;
+        font-size:16px;
+        background:@accent;
+        border:2px solid @accent;
+        position:relative;
+        z-index:999;
+        display: inline-block;
+        &:hover {
+          padding:13px 20px;
+          font-size:16px;
+          color:@accent;
+          border:2px solid @accent;
+          background:@onaccent;
+        }
+      }
+    }
+    .razep-bar {
+      h3 {
+        display: inline-block;
+        font-size: 16px;
+      }
+      h3.title {
+        font-weight: 600;
+      }
+      h3.percentage {
+        float: right;
+      }
+      .progress {
+        margin-bottom: 0;
+        .progress-bar {
+          background: @accent;
+        }
+      }
     }
   }
   .f-image{
@@ -46,6 +63,9 @@
 		  }
   	}
   }
+}
+#hero1 {
+  margin-bottom: 20px;
 }
 @media screen and (max-width:767px){
   .h-content{

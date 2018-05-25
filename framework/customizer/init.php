@@ -30,8 +30,6 @@ require_once get_template_directory().'/framework/customizer/featured-page.php';
 require_once get_template_directory().'/framework/customizer/hero.php';
 require_once get_template_directory().'/framework/customizer/googlefonts.php';
 require_once get_template_directory().'/framework/customizer/misc-scripts.php';
-require_once get_template_directory().'/framework/customizer/temp.php';
-
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

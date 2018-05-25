@@ -25,14 +25,10 @@
 					        ?>
 							    	<div class="fg-item">
 							    		<a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
-                                            <div class="fpage-icon col-md-2">
-                                                <span class="fa-layers fa-fw" style="background:MistyRose">
-                                                    <i class="fas fa-circle" style="color:Tomato"></i>
-                                                    <i class="<?php echo get_theme_mod('raze_fpage_icons_'.$i); ?>" data-fa-transform="shrink-6"></i>
-                                                </span>
-                                                <div class="color"><?php echo get_theme_mod('raze_skins'); ?></div>
+                                            <div class="fpage-icon col-md-2 col-sm-2 col-xs-2">
+                                                    <i class="fa-fw <?php echo get_theme_mod('raze_fpage_icons_'.$i); ?>"></i>
                                             </div>
-                                            <div class="fpage-title col-md-10">
+                                            <div class="fpage-title col-md-10 col-sm-10 col-xs-10">
                                                 <h3><?php the_title(); ?></h3>
                                             </div>
 							    		</a>

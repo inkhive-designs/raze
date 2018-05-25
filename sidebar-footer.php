@@ -28,6 +28,9 @@ endif;
                                     <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                                 </div>
                             <?php endif; ?>
+                            <div id="social-icons">
+                                <?php get_template_part('social', 'fa'); ?>
+                            </div>
                         </div>
 						<?php dynamic_sidebar( 'footer-1'); ?> 
 					</div> 

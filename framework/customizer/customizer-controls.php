@@ -197,15 +197,10 @@ class Raze_Switch_Control extends WP_Customize_Control{
             </span>
             <?php } ?>
 
-            <div class="raze-selected-skin">
-                <div style="height: 45px; width: 100px; background: <?php echo $this->value(); ?>;"></div>
-                <span><i class="fa fa-angle-down"></i></span>
-            </div>
-
             <?php $name = '_customize-skin-' . $this->id;
 	            foreach ($this->choices as $key=>$value) { ?>
                     <label>
-                        <input type="radio" style="display: inline-block; margin: 0; width: 45px; height: 45px; background: <?php echo $key; ?>"  value="<?php echo esc_attr($value); ?>" <?php $this->link(); ?> name="<?php echo esc_attr( $name ); ?>" <?php checked( $this->value(), $value ); ?>/>
+                        <input type="radio" class="custom_skin_control" style="background: <?php echo $key; ?>"  value="<?php echo esc_attr($value); ?>" <?php $this->link(); ?> name="<?php echo esc_attr( $name ); ?>" <?php checked( $this->value(), $value ); ?>/>
                     </label>
            <?php }
         }

@@ -54,34 +54,6 @@ function raze_customize_register_skins( $wp_customize ) {
 	    )
 	);
 	
-	$wp_customize->add_setting(
-		'raze_skin',
-		array(
-			'default'=> 'default',
-			'sanitize_callback' => 'raze_sanitize_skin' 
-			)
-	);
-	
-	$skins = array( 'default' => __('Default(red)','raze'),
-					'green' => __('Green','raze'),
-					'brown' => __('Brown','raze'),
-					'darkblue' => __('Dark Blue','raze'),
-					'grayscale' => __('Grayscale','raze'),
-					'yellow' => __('Yellow','raze'),
-					'brie' => __('Brie','raze'),
-					);
-
-
-	$wp_customize->add_control(
-		'raze_skin',array(
-				'settings' => 'raze_skin',
-				'section'  => 'raze_skin_options',
-				'label' => __('Choose from the Skins Below','raze'),
-				'type' => 'select',
-				'choices' => $skins,
-			)
-	);
-	
 	function raze_sanitize_skin( $input ) {
 		if ( in_array($input, array('default','brown','green','grayscale', 'darkblue','yellow','brie') ) )
 			return $input;
@@ -93,8 +65,8 @@ function raze_customize_register_skins( $wp_customize ) {
     $wp_customize->add_setting(
         'raze_skins',
         array(
-	        'default'	=> 'grayscale',
-            'sanitize_callback' => 'raze_sanitize_text',
+	        'default'	=> 'default',
+            'sanitize_callback' => 'raze_sanitize_skin',
             'transport'	=> 'refresh'
         )
     );
@@ -129,64 +101,7 @@ function raze_customize_register_skins( $wp_customize ) {
             )
         )
     );
-	
-	//CUSTOM SKIN BUILDER
-	
-	$wp_customize->add_setting('raze_skin_var_background', array(
-	    'default'     => '#FFF',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	));
-	
-	$wp_customize->add_control(new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'raze_skin_var_background', array(
-			'label' => __('Primary Background','raze'),
-			'section' => 'raze_skin_options',
-			'settings' => 'raze_skin_var_background',
-			'active_callback' => 'raze_skin_custom',
-			'type' => 'color'
-		) ) 
-	);
-	
-	
-	$wp_customize->add_setting('raze_skin_var_accent', array(
-	    'default'     => '#be2819',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	));
-	
-	$wp_customize->add_control(new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'raze_skin_var_accent', array(
-			'label' => __('Primary Accent','raze'),
-			'description' => __('For Most Users, Changing this only color is sufficient.','raze'),
-			'section' => 'raze_skin_options',
-			'settings' => 'raze_skin_var_accent',
-			'type' => 'color',
-			'active_callback' => 'raze_skin_custom',
-		) ) 
-	);	
-	
-	$wp_customize->add_setting('raze_skin_var_content', array(
-	    'default'     => '#777777',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	));
-	
-	$wp_customize->add_control(new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'raze_skin_var_content', array(
-			'label' => __('Content Color','raze'),
-			'description' => __('Must be Dark, like Black or Dark grey. Any darker color is acceptable.','raze'),
-			'section' => 'raze_skin_options',
-			'settings' => 'raze_skin_var_content',
-			'active_callback' => 'raze_skin_custom',
-			'type' => 'color'
-		) ) 
-	);
-	
-	function raze_skin_custom( $control ) {
-		$option = $control->manager->get_setting('raze_skin');
-	    return $option->value() == 'custom' ;
-	}
+
 
 }
 	

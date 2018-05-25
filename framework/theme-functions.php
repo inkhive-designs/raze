@@ -340,24 +340,30 @@ function raze_is_enabled( $component ) {
 	
 	wp_reset_postdata();
 	$return_val = false;
-	
 	switch ($component) {
 		case 'showcase' :
 		
 			 if ( ( get_theme_mod('raze_showcase_enable') == 'enable' && ( is_home() ) )
 			 	|| ( get_theme_mod('raze_showcase_enable_posts') == 'enable' && ( is_single() ) )
-			 	|| ( get_theme_mod('raze_showcase_enable_front') == 'enable'  && ( is_front_page() ) )
-			 	|| ( get_post_meta( get_the_ID(), 'enable-showcase', true ) ) ) :
+			 	|| ( get_theme_mod('raze_showcase_enable_front') == 'enable'  && ( is_front_page() ) )):
 			 		$return_val = true;
 			 	endif;
 			 	break;
+
+        case 'hero' :
+
+            if ( ( get_theme_mod('raze_hero_top_enable') == 'enable' && ( is_home() ) )
+                || ( get_theme_mod('raze_hero_top_enable_posts') == 'enable' && ( is_single() ) )
+                || ( get_theme_mod('raze_hero_top_enable_front') == 'enable'  && ( is_front_page() ) )):
+                $return_val = true;
+            endif;
+            break;
 
         case 'featured-page' :
 
             if( ( get_theme_mod('raze_fpage_enable') == 'enable' && (is_home() ) )
                 || ( get_theme_mod('raze_fpage_enable_posts') == 'enable' && (is_single()))
-                || ( get_theme_mod('raze_fpage_enable_front') == 'enable' && (is_front_page()))
-                || ( get_post_meta( get_the_ID(), 'enable-showcase', true ) ) ) :
+                || ( get_theme_mod('raze_fpage_enable_front') == 'enable' && (is_front_page()))) :
                 $return_val = true;
             endif;
             break;
@@ -380,6 +386,10 @@ function raze_display_fc() {
 					if  ( raze_is_enabled( 'showcase' ) )
 						get_template_part('featured','showcase' );
 					break;
+                case 'hero-top':
+                    if  ( raze_is_enabled( 'hero' ) )
+                        get_template_part('hero','top' );
+                    break;
                 case 'featured-page':
                     if ( raze_is_enabled('featured-page'))
                         get_template_part('featured', 'pagesection');
@@ -389,7 +399,7 @@ function raze_display_fc() {
 		}	
 		
 		//get order of components
-		$list = array('showcase', 'featured-page'); //Write Them in their Default Order of Appearance.
+		$list = array('showcase', 'hero-top', 'featured-page'); //Write Them in their Default Order of Appearance.
 		$order = array();
 		
 		$x = 0;

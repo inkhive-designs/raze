@@ -1,4 +1,4 @@
-# Raze Plus
+# Raze
 
 **Contributors:** (inkhive)  
 **Requires at least:** WordPress 4.4  
@@ -12,7 +12,7 @@ Creative and Beautiful WordPress Theme with a Large Header
 
 ## Description
 
-Raze Plus is a unique, ultra creative multipurpose WordPress theme with complete support for WooCommerce. Raze Plus supports all basic features and is fully mobile friendly. And with Support for Custom Widgets, Slider and Featured Posts section, etc you can make this theme look even more beautiful on your website. 
+Raze is a unique, ultra creative multipurpose WordPress theme with complete support for WooCommerce. Raze Plus supports all basic features and is fully mobile friendly. And with Support for Custom Widgets, Slider and Featured Posts section, etc you can make this theme look even more beautiful on your website. 
 Demo Here: http://demo.inkhive.com/raze-plus/
 
 
@@ -34,23 +34,19 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 	- MIT License
 	- http://ianlunn.github.io/Hover/
 	
-4. Slicknav
-	- MIT License
-	- https://github.com/ComputerWolf/SlickNav
-
-5. Swiper Slider
+4. Swiper Slider
 	- MIT License
 	- https://github.com/nolimits4web/swiper/			
 	
-7. _S/Underscores Framework
+5. _S/Underscores Framework
 	- GPL v2
 	- http://underscores.me
 
-7. Modernizer 			
+6. Modernizer 			
 	- MIT and BSD
 	- http://modernizr.com
 	
-8. Responsive Menu
+7. Responsive Menu
 	- https://github.com/mattkersley/Responsive-Menu
 	- MIT license
 	

@@ -9,7 +9,7 @@ function raze_customize_register_social( $wp_customize ) {
 
     $social_networks = array( //Redefinied in Sanitization Function.
         'none' => __('-','raze'),
-        'facebook' => __('Facebook','raze'),
+        'facebook-f' => __('Facebook','raze'),
         'twitter' => __('Twitter','raze'),
         'google-plus-g' => __('Google Plus','raze'),
         'instagram' => __('Instagram','raze'),
@@ -90,7 +90,7 @@ function raze_customize_register_social( $wp_customize ) {
     function raze_sanitize_social( $input ) {
         $social_networks = array(
             'none' ,
-            'facebook',
+            'facebook-f',
             'twitter',
             'google-plus-g',
             'instagram',

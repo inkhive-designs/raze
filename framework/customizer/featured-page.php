@@ -2,7 +2,7 @@
 function raze_customize_register_featured_page($wp_customize) {
     $wp_customize->add_section('raze_fpage_sec', array(
             'title' => __('Featured Page Section', 'raze'),
-            'priority' => 21,
+            'priority' => 22,
         )
     );
 

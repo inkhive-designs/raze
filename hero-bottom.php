@@ -1,4 +1,4 @@
-<?php if ( get_theme_mod('raze_hero_eta_enable') ) : ?>
+<?php if ( get_theme_mod('raze_hero_bottom_enable') ) : ?>
     <div id="hero2" class="hero-content">
         <div class="layer"></div>
         <div class="container hero-container">
@@ -28,9 +28,11 @@
                         </div>
                     <?php endif; ?>
                     <?php if(get_theme_mod('raze_hero2_button') != ''): ?>
+                    <div class="button">
                         <a href="<?php the_permalink(); ?>" class="more-button">
                             <?php echo esc_html(get_theme_mod('raze_hero2_button')); ?>
                         </a>
+                    </div>
                     <?php endif;?>
                 </div>
                 <?php if (has_post_thumbnail()) : ?>

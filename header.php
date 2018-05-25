@@ -53,8 +53,8 @@
 				<div id="social-icons">
 					<?php get_template_part('social', 'fa'); ?>
 				</div>
-			</div>	
-			
+			</div>
+
 	</header><!-- #masthead -->
 
     <?php get_template_part('slider', 'swiper'); ?>

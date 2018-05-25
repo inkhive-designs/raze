@@ -9,11 +9,16 @@
     padding: 5px;
     .site-branding {
       padding: 20px 0px;
-      img {
-        width: 200px;
-        height: auto;
+      #site-logo {
+        margin-bottom: 12px;
+        img {
+          width: 200px;
+          height: auto;
+        }
       }
+
       #text-title-desc {
+        margin-bottom: 12px;
         .site-title {
           font-size: 54px;
           font-weight: 600;
@@ -143,7 +148,8 @@
     .widget_recent_entries, .widget_recent_comments, .widget_categories, .widget_pages, .widget_archive, .widget_meta, .widget_nav_menu {
       ul li:before {
         content: "\f054";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
         color: lighten(@accent,1%);
         font-size: 10px;
         margin-right: 5px;

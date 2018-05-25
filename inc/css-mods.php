@@ -37,12 +37,42 @@ function raze_custom_css_mods() {
 		echo "#masthead h2.site-description { color: ".esc_html( get_theme_mod('raze_header_desccolor','#ffff') )."; }";
 	endif;
 
-    if (get_theme_mod('raze_hero2_background_image')) :
-        $image1 = get_theme_mod('raze_hero2_background_image');
-        echo "#hero2 {
+    if (get_theme_mod('raze_hero1_background_image')) :
+        $image1 = get_theme_mod('raze_hero1_background_image');
+        echo "#hero1 {
                     background-image: url('" . $image1 . "');
                     background-size: cover;
                 }";
+    endif;
+
+    if (get_theme_mod('raze_hero1_background_image')):
+        echo "#hero1 .h-content .excerpt, #hero1 .h-content h1.title {
+                    color: white;
+                }";
+    else:
+        echo "#hero1 .h-content .excerpt, #hero1 .h-content h1.title {
+                    color: black;
+                } ";
+
+    endif;
+
+    if (get_theme_mod('raze_hero2_background_image')) :
+        $image2 = get_theme_mod('raze_hero2_background_image');
+        echo "#hero2 {
+                    background-image: url('" . $image2 . "');
+                    background-size: cover;
+                }";
+    endif;
+
+    if (get_theme_mod('raze_hero2_background_image')):
+        echo "#hero2 .h-content .excerpt, #hero2 .h-content h1.title {
+                    color: white;
+                }";
+    else:
+        echo "#hero2 .h-content .excerpt, #hero2 .h-content h1.title {
+                    color: black;
+                } ";
+
     endif;
 
 	//Check Jetpack is active
