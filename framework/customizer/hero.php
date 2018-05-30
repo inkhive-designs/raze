@@ -252,6 +252,7 @@ function raze_customize_register_hero($wp_customize) {
 
     $wp_customize->add_setting('raze_hero2_selectpage',
         array(
+	        'default'	=> '- Select -',
             'sanitize_callback' => 'absint'
         )
     );
@@ -299,6 +300,21 @@ function raze_customize_register_hero($wp_customize) {
             'active_callback' => 'raze_hero_bottom_active_callback'
         )
     );
+    
+    $wp_customize->add_setting(
+		'raze_hero-top_priority',
+		array( 'default'=> 10, 'sanitize_callback' => 'sanitize_text_field' )
+	);
+	
+	$wp_customize->add_control(
+			'raze_hero-top_priority', array(
+		    'settings' => 'raze_hero-top_priority',
+		    'label'    => __( 'Priority', 'raze' ),
+		    'section'  => 'raze_hero1_section',
+		    'type'     => 'number',
+		    'description' => __('Elements with Low Value of Priority will appear first.','raze'),
+		)
+	);
 
     /* Active Callback Function */
     function raze_hero_bottom_active_callback( $control ) {

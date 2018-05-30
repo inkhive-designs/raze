@@ -22,9 +22,9 @@
                 <h1 class="entry-title title-font">
                     <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
                 </h1>
-                <span class="entry-excerpt">
+                <div class="entry-excerpt">
                     <?php echo substr(get_the_excerpt(),0,140).(get_the_excerpt() ? "..." : "" ); ?>
-                </span>
+                </div>
                 <div class="author">
                         <?php echo get_avatar('ID'); ?>
                     <span class="author-name">

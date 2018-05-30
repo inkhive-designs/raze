@@ -21,7 +21,9 @@
 
 					?>
 					<div class="showcase-item col-md-4 col-sm-4 col-xs-6 col-xs-12">
+						<?php if ($url !=	'') { ?>
 		            	<a href="<?php echo $url; ?>">
+			            <?php } ?>
                             <?php if($img): ?>
 		            		<img src="<?php echo $img ?>" data-thumb="<?php echo $img ?>" title="<?php echo $title." - ".$desc ?>" />
                             <?php else: ?>
@@ -37,7 +39,9 @@
 				            
 						</div>
 						
+						<?php if ($url !=	'') { ?>
 						</a>
+						<?php } ?>
 
 		            </div>
 	             <?php endfor; ?>

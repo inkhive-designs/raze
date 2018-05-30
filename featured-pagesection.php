@@ -3,10 +3,10 @@
     <div class="fpage-content col-md-6 col-sm-6 col-xs-12">
 
         <div class="fpage-sec-title title-font">
-            <?php echo esc_html( get_theme_mod('raze_fpage_title',__('Featured Section','raze')) ) ?>
+            <?php echo esc_html( get_theme_mod('raze_fpage_title', '') ) ?>
         </div>
         <div class="fpage-description">
-            <?php echo esc_html( get_theme_mod('raze_fpage_description', __('Enter Description Here', 'raze'))) ?>
+            <?php echo esc_html( get_theme_mod('raze_fpage_description')) ?>
         </div>
 
         <?php for( $i=1; $i<=4; $i++ ) : ?>

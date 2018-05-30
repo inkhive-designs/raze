@@ -1,3 +1,4 @@
+<?php var_dump( get_theme_mod('raze_hero_bottom_enable') ); ?>
 <?php if ( get_theme_mod('raze_hero_bottom_enable') ) : ?>
     <div id="hero2" class="hero-content">
         <div class="layer"></div>

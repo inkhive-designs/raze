@@ -28,7 +28,9 @@ function raze_customize_register_layouts( $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'raze_blog_layout',
-		array( 'sanitize_callback' => 'raze_sanitize_blog_layout' )
+		array( 
+			'default'		=> 'raze',
+		'sanitize_callback' => 'raze_sanitize_blog_layout' )
 	);
 
 	function raze_sanitize_blog_layout( $input ) {

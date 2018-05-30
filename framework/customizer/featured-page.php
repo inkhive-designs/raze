@@ -83,6 +83,8 @@ function raze_customize_register_featured_page($wp_customize) {
     $wp_customize->add_setting(
         'raze_fpage_title',
         array(
+	        
+	        'default'			=> __('Featured Section', 'raze'),
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
@@ -166,5 +168,20 @@ function raze_customize_register_featured_page($wp_customize) {
             )
         )
     );
+    
+    $wp_customize->add_setting(
+		'raze_featured-page_priority',
+		array( 'default'=> 10, 'sanitize_callback' => 'sanitize_text_field' )
+	);
+	
+	$wp_customize->add_control(
+			'raze_featured-page_priority', array(
+		    'settings' => 'raze_featured-page_priority',
+		    'label'    => __( 'Priority', 'raze' ),
+		    'section'  => 'raze_fpage_sec',
+		    'type'     => 'number',
+		    'description' => __('Elements with Low Value of Priority will appear first.','raze'),
+		)
+	);
 }
 add_action('customize_register', 'raze_customize_register_featured_page');

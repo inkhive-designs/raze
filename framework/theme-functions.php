@@ -343,31 +343,31 @@ function raze_is_enabled( $component ) {
 	switch ($component) {
 		case 'showcase' :
 		
-			 if ( ( get_theme_mod('raze_showcase_enable') == 'enable' && ( is_home() ) )
-			 	|| ( get_theme_mod('raze_showcase_enable_posts') == 'enable' && ( is_single() ) )
-			 	|| ( get_theme_mod('raze_showcase_enable_front') == 'enable'  && ( is_front_page() ) )):
+			 if ( ( get_theme_mod('raze_showcase_enable') == 'enable' && is_home() )
+			 	|| ( get_theme_mod('raze_showcase_enable_posts') == 'enable' && is_single() )
+			 	|| ( get_theme_mod('raze_showcase_enable_front') == 'enable'  && is_front_page() )):
 			 		$return_val = true;
 			 	endif;
 			 	break;
 
         case 'hero' :
 
-            if ( ( get_theme_mod('raze_hero_top_enable') == 'enable' && ( is_home() ) )
-                || ( get_theme_mod('raze_hero_top_enable_posts') == 'enable' && ( is_single() ) )
-                || ( get_theme_mod('raze_hero_top_enable_front') == 'enable'  && ( is_front_page() ) )):
+            if ( ( get_theme_mod('raze_hero_top_enable') == 'enable' && is_home() )
+                || ( get_theme_mod('raze_hero_top_enable_posts') == 'enable' && is_single() )
+                || ( get_theme_mod('raze_hero_top_enable_front') == 'enable'  && is_front_page() ) ):
                 $return_val = true;
             endif;
             break;
 
         case 'featured-page' :
 
-            if( ( get_theme_mod('raze_fpage_enable') == 'enable' && (is_home() ) )
-                || ( get_theme_mod('raze_fpage_enable_posts') == 'enable' && (is_single()))
-                || ( get_theme_mod('raze_fpage_enable_front') == 'enable' && (is_front_page()))) :
+            if( ( get_theme_mod('raze_fpage_enable') == 'enable' && is_home() )
+                || ( get_theme_mod('raze_fpage_enable_posts') == 'enable' && is_single() )
+                || ( get_theme_mod('raze_fpage_enable_front') == 'enable' && is_front_page() ) ) :
                 $return_val = true;
             endif;
             break;
-									
+
 	}//endswitch
 	
 	return $return_val;
@@ -396,8 +396,8 @@ function raze_display_fc() {
                     break;
 			}	
 					
-		}	
-		
+		}
+
 		//get order of components
 		$list = array('showcase', 'hero-top', 'featured-page'); //Write Them in their Default Order of Appearance.
 		$order = array();
@@ -416,6 +416,7 @@ function raze_display_fc() {
 		ksort($sorted); //Sort on the Value of Keys 
 		$sorted = array_values($sorted); //Fetch only the values, get rid of keys.
 				
+		
 		//Display the Components
 		foreach($sorted as $s) {
 				show($s);
